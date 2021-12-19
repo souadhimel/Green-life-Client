@@ -6,13 +6,13 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://desolate-sands-22384.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
 
   const handleDelete = (id) => {
-    const url = `https://desolate-sands-22384.herokuapp.com/services/${id}`;
+    const url = `http://localhost:5000/services/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -42,14 +42,14 @@ const ManageProducts = () => {
     <div style={{ marginTop: 3 }}>
       <h2 className="text-center mb-3">Manage products</h2>
 
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={3} className=" my-3 " style={{ overflow: "hidden" }}>
         {services.map((service) => (
           <div className="text-center mb-3" key={service._id}>
             <div>
               <img src={service.img} className="card-img-top" alt="..." />
             </div>
 
-            <div className="card-body">
+            <div className="card-body h-100">
               <h3 className="text-center">{service.name}</h3>
               <h5>Description:{service.description}</h5>
               <h5>Price:{service.price}</h5>

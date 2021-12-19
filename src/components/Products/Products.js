@@ -7,7 +7,7 @@ import { Row } from "react-bootstrap";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://desolate-sands-22384.herokuapp.com/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setProducts(data.slice(0, 6)));
   });

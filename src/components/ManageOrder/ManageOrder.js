@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageOrder = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("https://desolate-sands-22384.herokuapp.com/orders")
+    fetch("http://localhost:5000/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
@@ -15,7 +15,7 @@ const ManageOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
-      const url = `https://desolate-sands-22384.herokuapp.com/orders/${id}`;
+      const url = `http://localhost:5000/orders/${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",
@@ -51,7 +51,7 @@ const ManageOrder = () => {
           <h2 className="text-center">Manage Order</h2>
         </div>
 
-        <div className="mx-auto">
+        <div className="mx-auto g-4 h-100">
           <Table striped bordered responsive hover>
             <thead>
               <tr>

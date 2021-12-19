@@ -14,14 +14,14 @@ const Update = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    const url = `https://desolate-sands-22384.herokuapp.com/orders/${id}`;
+    const url = `http://localhost:5000/orders/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [id, isUpdate]);
 
   const onSubmit = (data) => {
-    fetch(`https://desolate-sands-22384.herokuapp.com/update/${id}`, {
+    fetch(`http://localhost:5000/update/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

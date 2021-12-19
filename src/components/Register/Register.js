@@ -15,22 +15,20 @@ const Register = () => {
   const onSubmit = (data) => {
     // console.log(data);
     const user = { email: data.email, displayName: data.name };
-    axios
-      .post("https://desolate-sands-22384.herokuapp.com/users", user)
-      .then((res) => {
-        if (res.data.insertedId) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "You have registered successfully!",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          handleRegister(data?.email, data?.password, data?.name);
-          history.push("/");
-          reset();
-        }
-      });
+    axios.post("http://localhost:5000/users", user).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "You have registered successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        handleRegister(data?.email, data?.password, data?.name);
+        history.push("/");
+        reset();
+      }
+    });
   };
   return (
     <div className="bg-white text-center pb-5">

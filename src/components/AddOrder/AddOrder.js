@@ -16,14 +16,14 @@ const AddOrder = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`https://desolate-sands-22384.herokuapp.com/services/${id}`)
+    fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
 
   const onSubmit = (data) => {
     data.email = user?.email;
-    fetch("https://desolate-sands-22384.herokuapp.com/addOrders", {
+    fetch("http://localhost:5000/services/addOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
