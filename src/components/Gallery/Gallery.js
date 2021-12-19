@@ -22,7 +22,7 @@ const Gallery = () => {
               alt=""
             />
             <div className="content">
-              <h3>drawing Room</h3>
+              <h3>the green</h3>
 
               <Link to="#" className="btn">
                 see more
