@@ -1,0 +1,43 @@
+.main-banner h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+.main-banner p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 25px auto;
+  width: 45%;
+}
+.carousel-caption {
+  bottom: 180px;
+}
+.main-banner .contact-btn {
+  background: #fff;
+  color: #00bb6d;
+}
+.carousel-indicators button {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel-caption {
+    bottom: -0.75rem;
+  }
+  .main-banner h1 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .main-banner p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 3px auto;
+    width: 100%;
+  }
+  .main-banner button {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+  .main-banner img {
+    height: 162px;
+  }
+}
