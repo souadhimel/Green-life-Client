@@ -10,18 +10,20 @@ const Review = () => {
   const { user } = useAuth();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/rating", data).then((res) => {
-      if (res.data.insertedId) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Congratz!Your comment has been added",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        reset();
-      }
-    });
+    axios
+      .post("https://fast-headland-05242.herokuapp.com/rating", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Congratz!Your comment has been added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          reset();
+        }
+      });
   };
   return (
     <div className="add-service" style={{ marginTop: 50 }}>

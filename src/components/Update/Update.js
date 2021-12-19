@@ -14,14 +14,14 @@ const Update = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://fast-headland-05242.herokuapp.com/orders/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [id, isUpdate]);
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/update/${id}`, {
+    fetch(`https://fast-headland-05242.herokuapp.com/update/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

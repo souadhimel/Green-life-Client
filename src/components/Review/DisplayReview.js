@@ -7,7 +7,7 @@ import "./Review.css";
 const DisplayReview = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/rating")
+    fetch("https://fast-headland-05242.herokuapp.com/rating")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

@@ -178,7 +178,7 @@ const Dashboard = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const { logOut, admin } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+    fetch(`https://fast-headland-05242.herokuapp.com/checkAdmin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data[0]?.role === "admin") {

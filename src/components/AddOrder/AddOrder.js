@@ -16,14 +16,14 @@ const AddOrder = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://fast-headland-05242.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
 
   const onSubmit = (data) => {
     data.email = user?.email;
-    fetch("http://localhost:5000/addOrders", {
+    fetch("https://fast-headland-05242.herokuapp.com/addOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
